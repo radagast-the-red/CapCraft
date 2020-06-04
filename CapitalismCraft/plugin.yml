@@ -1,0 +1,61 @@
+name: CapitalismCraft
+main: com.duke.capitalismCraft.CapitalismCraft
+version: 0.1
+api-version: 1.13
+commands:
+    bal:
+        description: Check somebody's balance
+        usage: /bal [name]
+        permission: capitalismcraft.bal
+    taxi:
+        description: Paid taxi service
+        usage: /taxi [x] [z]
+        permission: capitalismcraft.taxi
+    taxicheckfare:
+        description: Check how expensive a taxi would be
+        usage: /taxicheckfare [x] [z]
+        permission: capitalismcraft.taxicheckfare
+    property:
+        description: Manage property
+        usage: /property [info] [x] [z]
+        permission: capitalismcraft.property
+    store:
+        description: Open the government store. Only works inside of the building
+        usage: /store
+        permission: capitalismcraft.store
+    propertyview:
+        description: Access the property viewing world or return from it
+        usage: /propertyview [update]
+        permission: capitalismcraft.propertyview
+permissions:
+    capitalism.interactall:
+        description: Overrides property ownership and allows breaking all blocks
+        default: op
+    capitalismcraft.bal:
+        description: Allows you to check your balance
+        default: true
+    capitalismcraft.bal.others:
+        description: Allows you to check other balances
+        default: op
+        children:
+            capitalismcraft.bal: true
+    capitalismcraft.taxi:
+        description: Allows you to use the taxi service
+        default: true
+    capitalismcraft.taxicheckfare:
+        description: Allows you to check how expensive a taxi would be
+        default: true
+    capitalismcraft.property:
+        description: Allows you to manage property
+        default: true
+    capitalismcraft.store:
+        description: Allows you to use the government store
+        default: true
+    capitalismcraft.propertyview:
+        description: Allows you to use the property view world
+        default: true
+    capitalismcraft.propertyview.update:
+        description: Allows you to force a redraw of the property view world
+        default: op
+        children:
+            capitalismcraft.propertyview: true
